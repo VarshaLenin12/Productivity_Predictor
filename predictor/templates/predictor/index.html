@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productivity Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="brand-logo"></div>
+        <div class="brand-title">Productivity Predictor</div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="inputs">
+                <label for="id_date">Date:</label>
+                <input type="text" id="id_date" name="date" value="{{ form.date.value }}" required>
+
+                <label for="id_department">Department:</label>
+                {{ form.department }}
+                
+                <label for="id_team">Team:</label>
+                {{ form.team }}
+
+                <label for="id_targeted_productivity">Targeted Productivity:</label>
+                {{ form.targeted_productivity }}
+
+                <label for="id_std_minute_value">Standard Minute Value:</label>
+                {{ form.std_minute_value }}
+
+                <label for="id_work_in_progress">Work in Progress:</label>
+                {{ form.work_in_progress }}
+
+                <label for="id_over_time">Over Time:</label>
+                {{ form.over_time }}
+
+                <label for="id_incentive">Incentive:</label>
+                {{ form.incentive }}
+
+                <label for="id_idle_time">Idle Time:</label>
+                {{ form.idle_time }}
+
+                <label for="id_idle_men">Idle Men:</label>
+                {{ form.idle_men }}
+
+                <label for="id_no_of_style_change">Number of Style Changes:</label>
+                {{ form.no_of_style_change }}
+
+                <label for="id_no_of_workers">Number of Workers:</label>
+                {{ form.no_of_workers }}
+
+                <button type="submit">Predict Productivity</button>
+            </div>
+        </form>
+
+        {% if predicted_actual_productivity is not none and predicted_productivity_label is not none %}
+        <div class="results">
+            <h2>Results</h2>
+            <p class="highlight">Predicted Actual Productivity: {{ predicted_actual_productivity }}</p>
+            <p class="highlight">Predicted Productivity Label: {{ predicted_productivity_label }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        $(function() {
+            $("#id_date").datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '2015:{{ current_year }}', // Adjust according to your needs
+                maxDate: '0', // Disable future dates
+            });
+        });
+    </script>
+</body>
+</html>
