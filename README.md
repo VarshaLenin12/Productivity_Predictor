@@ -25,8 +25,7 @@ Check out the live demo of the project [here](https://productivity-predictor.onr
 
 ## Features
 - 📈 Predict productivity based on input features.
-- 💻 User-friendly web interface for data input and prediction visualization.
-- 📊 Interactive dashboard for data analysis and insights.
+- 💻 User-friendly web interface for data input and prediction results.
 
 ## Installation
 To get started with the Productivity Predictor, follow these steps:
