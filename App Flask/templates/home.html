@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productivity Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap">
+    <link
+            rel="icon"
+            href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Coats_logo.svg/1200px-Coats_logo.svg.png"
+            type="image/x-icon"
+        />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Dataset</a></li>
+            <li><a href="#prediction">Prediction</a></li>
+            <li><a href="#team">Team Members</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="brand-logo"></div>
+
+        <h1>Stitch Up Your Production Goals: Predict Garment Worker Productivity</h1>
+        <p>In the fast-paced world of garment manufacturing, staying ahead means optimizing every aspect of your production line. Our innovative Productivity Predictor is here to transform how you manage your workforce and resources.</p>
+        <p>Our primary goal is to develop a cutting-edge predictive model that estimates the actual productivity of garment employees.
+        </p>
+        <br>
+        <a href='#prediction'><button>TRY NOW</button></a>
+    
+    </section>
+    <section id="about">
+        <h2>About Dataset</h2>
+        <div class="attribute">
+            <strong>Date:</strong>
+            <span>Date in MM-DD-YYYY</span>
+        </div>
+        <div class="attribute">
+            <strong>Day:</strong>
+            <span>Day of the Week</span>
+        </div>
+        <div class="attribute">
+            <strong>Quarter:</strong>
+            <span>A portion of the month. A month was divided into four quarters</span>
+        </div>
+        <div class="attribute">
+            <strong>Department:</strong>
+            <span>Associated department with the instance</span>
+        </div>
+        <div class="attribute">
+            <strong>Team Number:</strong>
+            <span>Associated team number with the instance</span>
+        </div>
+        <div class="attribute">
+            <strong>Number of Workers:</strong>
+            <span>Number of workers in each team</span>
+        </div>
+        <div class="attribute">
+            <strong>Number of Style Changes:</strong>
+            <span>Number of changes in the style of a particular product</span>
+        </div>
+        <div class="attribute">
+            <strong>Targeted Productivity:</strong>
+            <span>Targeted productivity set by the Authority for each team for each day</span>
+        </div>
+        <div class="attribute">
+            <strong>Standard Minute Value (SMV):</strong>
+            <span>The allocated time for a task</span>
+        </div>
+        <div class="attribute">
+            <strong>Work in Progress (WIP):</strong>
+            <span>Includes the number of unfinished items for products</span>
+        </div>
+        <div class="attribute">
+            <strong>Overtime:</strong>
+            <span>Represents the amount of overtime by each team in minutes</span>
+        </div>
+        <div class="attribute">
+            <strong>Incentive:</strong>
+            <span>Represents the amount of financial incentive (in BDT) that enables or motivates a particular course of action</span>
+        </div>
+        <div class="attribute">
+            <strong>Idle Time:</strong>
+            <span>The amount of time when the production was interrupted due to several reasons</span>
+        </div>
+        <div class="attribute">
+            <strong>Idle Men:</strong>
+            <span>The number of workers who were idle due to production interruption</span>
+        </div>
+        <div class="attribute">
+            <strong>Actual Productivity:</strong>
+            <span>The actual % of productivity that was delivered by the workers. It ranges from 0-1</span>
+        </div>
+    </section>
+
+    <section id="prediction">
+        <br><br>
+        <h2>Stop guessing, start predicting!</h2>
+        <p>Use the form on the Prediction page to input the required data and predict the productivity of a team.</p>
+        <br><br>
+        <a href="https://media.tenor.com/TS7aSPWwXJ4AAAAj/capoo-waiting.gif"></a>
+        <h2>Predict. Plan. Profit.</h2><br>
+        <a href="/index"><button>Go to Prediction Page</button></a>
+    </section>
+
+    <section id="team">
+        <h2>Team Members</h2>
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='harsh.jpg') }}" alt="Team Member 1">
+            <p>Harshini Vivek</p>
+            <a href="mailto:harshinivivekm@gmail.com">harshinivivekm@gmail.com</a> <br>
+            <a href="https://www.linkedin.com/in/harshini-vivek/">/in/harshini-vivek/</a> <br>
+
+        </div>
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='varsh.jpeg') }}" alt="Team Member 2">
+            <p>Varsha Lenin</p>
+            <a href="mailto:varshalenin999@gmail.com">varshalenin999@gmail.com</a> <br>
+            <a href="http://www.linkedin.com/in/varsha-l-ml">/in/varsha-l-ml</a> <br>
+
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
